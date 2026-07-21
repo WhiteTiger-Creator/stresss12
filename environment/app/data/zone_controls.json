@@ -1,0 +1,114 @@
+[
+  {
+    "layer": "lockdown",
+    "scope": "all",
+    "zone": "atrium",
+    "start_ms": 3110400000041,
+    "end_ms": 3110400000190
+  },
+  {
+    "layer": "maintenance",
+    "scope": "all",
+    "zone": "atrium",
+    "start_ms": 3110400000120,
+    "end_ms": 3110400000300
+  },
+  {
+    "layer": "lockdown",
+    "scope": "all",
+    "zone": "coldroom",
+    "start_ms": 3110400040031,
+    "end_ms": 3110400040160
+  },
+  {
+    "layer": "maintenance",
+    "scope": "contractor",
+    "zone": "coldroom",
+    "start_ms": 3110400040080,
+    "end_ms": 3110400040250
+  },
+  {
+    "layer": "maintenance",
+    "scope": "all",
+    "zone": "coldroom",
+    "start_ms": 3110400040900,
+    "end_ms": 3110400041100
+  },
+  {
+    "layer": "lockdown",
+    "scope": "visitor",
+    "zone": "dockbay",
+    "start_ms": 3110400080061,
+    "end_ms": 3110400080240
+  },
+  {
+    "layer": "lockdown",
+    "scope": "all",
+    "zone": "dockbay",
+    "start_ms": 3110400082000,
+    "end_ms": 3110400082200
+  },
+  {
+    "layer": "maintenance",
+    "scope": "all",
+    "zone": "dockbay",
+    "start_ms": 3110400080150,
+    "end_ms": 3110400080330
+  },
+  {
+    "layer": "lockdown",
+    "scope": "all",
+    "zone": "eastwing",
+    "start_ms": 3110400120021,
+    "end_ms": 3110400120150
+  },
+  {
+    "layer": "maintenance",
+    "scope": "all",
+    "zone": "eastwing",
+    "start_ms": 3110400120090,
+    "end_ms": 3110400120260
+  },
+  {
+    "layer": "lockdown",
+    "scope": "privileged",
+    "zone": "server-hall",
+    "start_ms": 3110400160025,
+    "end_ms": 3110400160176
+  },
+  {
+    "layer": "lockdown",
+    "scope": "all",
+    "zone": "server-hall",
+    "start_ms": 3110400163000,
+    "end_ms": 3110400163100
+  },
+  {
+    "layer": "maintenance",
+    "scope": "all",
+    "zone": "server-hall",
+    "start_ms": 3110400160110,
+    "end_ms": 3110400160290
+  },
+  {
+    "layer": "lockdown",
+    "scope": "all",
+    "zone": "vault",
+    "start_ms": 3110400200035,
+    "end_ms": 3110400200166
+  },
+  {
+    "layer": "maintenance",
+    "scope": "privileged",
+    "zone": "vault",
+    "start_ms": 3110400200095,
+    "end_ms": 3110400200275
+  },
+  {
+    "layer": "maintenance",
+    "scope": "all",
+    "zone": "vault",
+    "start_ms": 3110400201900,
+    "end_ms": 3110400202000
+  }
+]

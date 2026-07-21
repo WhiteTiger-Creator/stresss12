@@ -1,0 +1,232 @@
+[
+  {
+    "swipe_id": "aw-001",
+    "badge_id": "bg-002",
+    "badge_class": "staff",
+    "zone": "atrium",
+    "door": "atrium-door-2",
+    "event_ms": 3110400000000,
+    "exit_ms": 3110400000231,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-002",
+    "badge_id": "bg-003",
+    "badge_class": "staff",
+    "zone": "atrium",
+    "door": "atrium-door-3",
+    "event_ms": 3110400000900,
+    "exit_ms": 3110400001103,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-004",
+    "badge_id": "bg-005",
+    "badge_class": "contractor",
+    "zone": "atrium",
+    "door": "atrium-door-1",
+    "event_ms": 3110400003000,
+    "exit_ms": 3110400003173,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-005",
+    "badge_id": "bg-006",
+    "badge_class": "contractor",
+    "zone": "coldroom",
+    "door": "coldroom-door-2",
+    "event_ms": 3110400040000,
+    "exit_ms": 3110400040133,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-007",
+    "badge_id": "bg-008",
+    "badge_class": "privileged",
+    "zone": "coldroom",
+    "door": "coldroom-door-4",
+    "event_ms": 3110400041700,
+    "exit_ms": 3110400041820,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-008",
+    "badge_id": "bg-009",
+    "badge_class": "visitor",
+    "zone": "dockbay",
+    "door": "dockbay-door-1",
+    "event_ms": 3110400080000,
+    "exit_ms": 3110400080293,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-010",
+    "badge_id": "bg-011",
+    "badge_class": "visitor",
+    "zone": "dockbay",
+    "door": "dockbay-door-3",
+    "event_ms": 3110400082100,
+    "exit_ms": 3110400082328,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-011",
+    "badge_id": "bg-012",
+    "badge_class": "contractor",
+    "zone": "dockbay",
+    "door": "dockbay-door-4",
+    "event_ms": 3110400083200,
+    "exit_ms": 3110400083409,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-013",
+    "badge_id": "bg-014",
+    "badge_class": "staff",
+    "zone": "eastwing",
+    "door": "eastwing-door-2",
+    "event_ms": 3110400120700,
+    "exit_ms": 3110400120900,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-014",
+    "badge_id": "bg-015",
+    "badge_class": "contractor",
+    "zone": "eastwing",
+    "door": "eastwing-door-3",
+    "event_ms": 3110400121600,
+    "exit_ms": 3110400121733,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-016",
+    "badge_id": "bg-017",
+    "badge_class": "privileged",
+    "zone": "server-hall",
+    "door": "server-hall-door-1",
+    "event_ms": 3110400160850,
+    "exit_ms": 3110400160971,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-017",
+    "badge_id": "bg-001",
+    "badge_class": "contractor",
+    "zone": "server-hall",
+    "door": "server-hall-door-2",
+    "event_ms": 3110400161800,
+    "exit_ms": 3110400161979,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-019",
+    "badge_id": "bg-003",
+    "badge_class": "privileged",
+    "zone": "vault",
+    "door": "vault-door-4",
+    "event_ms": 3110400200000,
+    "exit_ms": 3110400200094,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-020",
+    "badge_id": "bg-004",
+    "badge_class": "contractor",
+    "zone": "vault",
+    "door": "vault-door-1",
+    "event_ms": 3110400200900,
+    "exit_ms": 3110400201007,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-022",
+    "badge_id": "bg-006",
+    "badge_class": "staff",
+    "zone": "atrium",
+    "door": "atrium-door-3",
+    "event_ms": 3110400000364,
+    "exit_ms": 3110400000456,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-023",
+    "badge_id": "bg-007",
+    "badge_class": "visitor",
+    "zone": "dockbay",
+    "door": "dockbay-door-4",
+    "event_ms": 3110400080473,
+    "exit_ms": 3110400080572,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-025",
+    "badge_id": "bg-009",
+    "badge_class": "staff",
+    "zone": "server-hall",
+    "door": "server-hall-door-2",
+    "event_ms": 3110400162139,
+    "exit_ms": 3110400162207,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-026",
+    "badge_id": "bg-010",
+    "badge_class": "contractor",
+    "zone": "eastwing",
+    "door": "eastwing-door-3",
+    "event_ms": 3110400122400,
+    "exit_ms": 3110400122603,
+    "revoked": true
+  },
+  {
+    "swipe_id": "aw-028",
+    "badge_id": "bg-012",
+    "badge_class": "Contractor ",
+    "zone": "atrium",
+    "door": "atrium-door-1",
+    "event_ms": 3110400004200,
+    "exit_ms": 3110400004459,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-029",
+    "badge_id": "bg-013",
+    "badge_class": "janitorial",
+    "zone": "coldroom",
+    "door": "coldroom-door-2",
+    "event_ms": 3110400042600,
+    "exit_ms": 3110400042871,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-014",
+    "badge_id": "bg-015",
+    "badge_class": "staff",
+    "zone": "eastwing",
+    "door": "eastwing-door-3",
+    "event_ms": 3110400121600,
+    "exit_ms": 3110400121766,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-020",
+    "badge_id": "bg-004",
+    "badge_class": "staff",
+    "zone": "vault",
+    "door": "vault-door-1",
+    "event_ms": 3110400200900,
+    "exit_ms": 3110400201040,
+    "revoked": false
+  },
+  {
+    "swipe_id": "aw-005",
+    "badge_id": "bg-006",
+    "badge_class": "visitor",
+    "zone": "coldroom",
+    "door": "coldroom-door-2",
+    "event_ms": 3110400040000,
+    "exit_ms": 3110400040133,
+    "revoked": false
+  }
+]
