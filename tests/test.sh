@@ -2,6 +2,7 @@
 set -euo pipefail
 
 mkdir -p /logs/verifier
+echo 0 > /logs/verifier/reward.txt
 
 if [ "$PWD" = "/" ]; then
     echo "Error: No working directory set. Please set a WORKDIR in your Dockerfile before running this script."

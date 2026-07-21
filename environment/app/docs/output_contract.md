@@ -70,5 +70,4 @@ The rollup proceeds in this order. What each stage *does* is governed by the dos
 
 The repaired rollup is graded on behaviour. It must accept an alternate badge stream via
 `--input`, produce identical output on reruns, and derive every value from the operational
-inputs and the governing decisions. Nothing is read or imported from `/tests` or
-`/solution`. No particular identifiers, helper names or code structure are required.
+inputs and the governing decisions. Nothing is read or imported from external grading resources. No particular identifiers, helper names or code structure are required.

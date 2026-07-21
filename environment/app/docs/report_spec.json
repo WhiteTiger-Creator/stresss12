@@ -107,7 +107,13 @@
     ],
     "ordering": "defects sorted by defect_id ascending",
     "evidence_contract": "dossier_quote is a line from the dossier copied VERBATIM, character for character, with surrounding whitespace stripped and nothing else altered; pipeline_evidence is likewise a verbatim stripped line from the FROZEN snapshot at /app/workflow/.export_access.original.",
-    "diagnosis_checksum": "sha256 over one line per defect in defect_id order, 'defect_id|stage|repair_action', joined by newline"
+    "diagnosis_checksum": "sha256 over one line per defect in defect_id order, 'defect_id|stage|repair_action', joined by newline",
+    "input_stats_types": {
+      "raw_swipe_count": "integer",
+      "unique_swipe_ids": "integer",
+      "duplicate_swipe_ids": "integer count of raw rows whose swipe_id repeats (len(present) - len(set(present))), NOT a list of ids",
+      "revoked_row_count": "integer"
+    }
   },
   "repair_audit": {
     "output_name": "repair_audit.json",
@@ -122,7 +128,8 @@
       "forbidden_tokens_removed",
       "artifacts"
     ],
-    "pre_repair_source": "the FROZEN bytes at /app/workflow/.export_access.original, never the live workflow, so the value is identical whether or not a repair already ran"
+    "pre_repair_source": "the FROZEN bytes at /app/workflow/.export_access.original, never the live workflow, so the value is identical whether or not a repair already ran",
+    "artifacts_field": "a JSON array of the output file BASENAMES written to the output directory, sorted ascending, and INCLUDING repair_audit.json itself even though it is written last"
   },
   "workflow_repair": {
     "path": "/app/workflow/export_access.py",
@@ -164,7 +171,8 @@
       ],
       "class_counts": "always enumerates privileged, contractor, staff, visitor in that order, emitting 0 for a class with no canonical rows; counts EVERY canonical row including revoked ones",
       "priority_counts": "always enumerates critical, high, standard in that order, emitting 0 for an empty tier",
-      "zones": "JSON array of zone names sorted ascending"
+      "zones": "JSON array of zone names sorted ascending",
+      "schema_version_value": "access-containment-v3"
     },
     "zone_matrix_json": {
       "output_name": "zone_matrix.json",
@@ -206,12 +214,12 @@
   },
   "digest_payloads": {
     "session_digest": "first 12 lowercase hex chars of sha256('zone|start_ms|end_ms|comma_joined_sorted_swipe_ids|top_class|ledger_dwell_ms')",
-    "canonical_swipe_checksum": "sha256 over one line per canonical row in emitted order, 'swipe_id|badge_id|badge_class|zone|event_ms|exit_ms|revoked_as_1_or_0'",
+    "canonical_swipe_checksum": "sha256 over one line per canonical row in emitted order, 'swipe_id|badge_id|badge_class|zone|event_ms|exit_ms|revoked_as_1_or_0'. Emitted order is the canonical rows sorted by (zone, event_ms, swipe_id) ascending.",
     "zone_control_checksum": "sha256 over one line per control window, 'layer|scope|zone|start_ms|end_ms', ordered by layer, then scope, then zone, then start_ms",
     "containment_checksum": "sha256 over one line per queue row in queue order, 'ticket_id|priority|ledger_dwell_ms|session_digest'"
   },
   "guardrails": {
     "frozen_snapshot": "never modify /app/workflow/.export_access.original",
-    "verifier_trees": "never read or import anything under /tests or /solution"
+    "verifier_trees": "never read or import external grading resources"
   }
 }
