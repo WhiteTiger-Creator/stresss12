@@ -1,0 +1,98 @@
+[
+  {
+    "detection_id": "ax-01",
+    "seen_ms": 4230000000000,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "lsass credential dump",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-02",
+    "seen_ms": 4230000000300,
+    "severity": "high",
+    "host_group": "servers",
+    "rule_name": "mimikatz signature match",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-03",
+    "seen_ms": 4230000001500,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "phishing macro execution",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-04",
+    "seen_ms": 4230000002000,
+    "severity": "critical",
+    "host_group": "workstations",
+    "rule_name": "cobalt strike beacon",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-05",
+    "seen_ms": 4230000002400,
+    "severity": "high",
+    "host_group": "jump-hosts",
+    "rule_name": "cobalt strike beacon",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-06",
+    "seen_ms": 4230000003000,
+    "severity": "critical",
+    "host_group": "domain-ctl",
+    "rule_name": "dcsync replication",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-07",
+    "seen_ms": 4230000003600,
+    "severity": "high",
+    "host_group": "build-agents",
+    "rule_name": "reverse shell outbound",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-08",
+    "seen_ms": 4230000004000,
+    "severity": "medium",
+    "host_group": "servers",
+    "rule_name": "shadow copy delete",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-09",
+    "seen_ms": 4230000004200,
+    "severity": "low",
+    "host_group": "laptops",
+    "rule_name": "usb mass storage",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-10",
+    "seen_ms": 4230000004600,
+    "severity": "high",
+    "host_group": "workstations",
+    "rule_name": "run key persistence",
+    "suppressed": true
+  },
+  {
+    "detection_id": "ax-11",
+    "seen_ms": 4230000005000,
+    "severity": "high",
+    "host_group": "domain-ctl",
+    "rule_name": "kerberoasting ticket request",
+    "suppressed": false
+  },
+  {
+    "detection_id": "ax-12",
+    "seen_ms": 4230000005300,
+    "severity": "high",
+    "host_group": "servers",
+    "rule_name": "smb lateral movement",
+    "suppressed": false
+  }
+]

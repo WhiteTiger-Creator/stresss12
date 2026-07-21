@@ -16,5 +16,5 @@ RUN python3 -m pip install --no-cache-dir --no-deps \
 WORKDIR /app
 
 COPY app/ /app/
-RUN cp /app/workflow/export_access.py /app/workflow/.export_access.original \
-    && chmod a-w /app/workflow/.export_access.original
+RUN cp /app/workflow/export_report.py /app/workflow/.export_report.original \
+    && chmod a-w /app/workflow/.export_report.original

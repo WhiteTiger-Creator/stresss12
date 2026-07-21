@@ -1,0 +1,226 @@
+[
+  {
+    "detection_id": "dt-101",
+    "seen_ms": 4230000000000,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "lsass credential dump",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-102",
+    "seen_ms": 4230000000250,
+    "severity": "Critical",
+    "host_group": "servers",
+    "rule_name": "mimikatz signature match",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-103",
+    "seen_ms": 4230000000700,
+    "severity": "high",
+    "host_group": "servers",
+    "rule_name": "smb lateral movement",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-110",
+    "seen_ms": 4230000001000,
+    "severity": "HIGH ",
+    "host_group": "workstations",
+    "rule_name": "powershell encoded command",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-111",
+    "seen_ms": 4230000001400,
+    "severity": "high",
+    "host_group": "workstations",
+    "rule_name": "run key persistence",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-120",
+    "seen_ms": 4230000002000,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "phishing macro execution",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-104",
+    "seen_ms": 4230000002800,
+    "severity": "high",
+    "host_group": "servers",
+    "rule_name": "shadow copy delete",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-105",
+    "seen_ms": 4230000002900,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "process hollowing inject",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-130",
+    "seen_ms": 4230000003000,
+    "severity": "critical",
+    "host_group": "jump-hosts",
+    "rule_name": "cobalt strike beacon",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-131",
+    "seen_ms": 4230000003300,
+    "severity": "critical",
+    "host_group": "build-agents",
+    "rule_name": "cobalt strike beacon",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-180",
+    "seen_ms": 4230000010000,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "obfuscated jscript loader",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-181",
+    "seen_ms": 4230000010090,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "wscript child process",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-140",
+    "seen_ms": 4230000003500,
+    "severity": "high",
+    "host_group": "domain-ctl",
+    "rule_name": "kerberoasting ticket request",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-141",
+    "seen_ms": 4230000005000,
+    "severity": "high",
+    "host_group": "servers",
+    "rule_name": "defender tamper disable",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-142",
+    "seen_ms": 4230000005200,
+    "severity": "medium",
+    "host_group": "workstations",
+    "rule_name": "scheduled task persistence",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-143",
+    "seen_ms": 4230000005300,
+    "severity": "low",
+    "host_group": "laptops",
+    "rule_name": "usb mass storage",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-144",
+    "seen_ms": 4230000005400,
+    "severity": "medium",
+    "host_group": "domain-ctl",
+    "rule_name": "audit log clear",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-150",
+    "seen_ms": 4230000006000,
+    "severity": "high",
+    "host_group": "servers",
+    "rule_name": "lsass credential dump",
+    "suppressed": true
+  },
+  {
+    "detection_id": "dt-151",
+    "seen_ms": 4230000006100,
+    "severity": "critical",
+    "host_group": "workstations",
+    "rule_name": "powershell encoded command",
+    "suppressed": "yes"
+  },
+  {
+    "detection_id": "dt-160",
+    "seen_ms": 4230000007000,
+    "severity": "high",
+    "host_group": "build-agents",
+    "rule_name": "reverse shell outbound",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-161",
+    "seen_ms": 4230000007150,
+    "severity": "critical",
+    "host_group": "build-agents",
+    "rule_name": "reverse shell outbound",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-170",
+    "seen_ms": 4230000008000,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "credential dump lsass",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-171",
+    "seen_ms": 4230000008300,
+    "severity": "high",
+    "host_group": "jump-hosts",
+    "rule_name": "rdp brute force",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-172",
+    "seen_ms": 4230000008600,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "shadow copy delete",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-173",
+    "seen_ms": 4230000009000,
+    "severity": "high",
+    "host_group": "workstations",
+    "rule_name": "wmi lateral execution",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-174",
+    "seen_ms": 4230000009200,
+    "severity": "critical",
+    "host_group": "domain-ctl",
+    "rule_name": "dcsync replication",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-101",
+    "seen_ms": 4230000000120,
+    "severity": "high",
+    "host_group": "servers",
+    "rule_name": "lsass credential dump",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-140",
+    "seen_ms": 4230000003500,
+    "severity": "critical",
+    "host_group": "domain-ctl",
+    "rule_name": "kerberoasting ticket request",
+    "suppressed": false
+  }
+]

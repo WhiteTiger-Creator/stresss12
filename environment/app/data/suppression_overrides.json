@@ -1,0 +1,38 @@
+[
+  {
+    "host_group": "build-agents",
+    "severity_scope": "all",
+    "start_ms": 4230000006950,
+    "end_ms": 4230000007200
+  },
+  {
+    "host_group": "servers",
+    "severity_scope": "critical",
+    "start_ms": 4230000008550,
+    "end_ms": 4230000008650
+  },
+  {
+    "host_group": "jump-hosts",
+    "severity_scope": "high",
+    "start_ms": 4230000008250,
+    "end_ms": 4230000008280
+  },
+  {
+    "host_group": "workstations",
+    "severity_scope": "high",
+    "start_ms": 4230000000900,
+    "end_ms": 4230000001100
+  },
+  {
+    "host_group": "servers",
+    "severity_scope": "all",
+    "start_ms": 4230000000200,
+    "end_ms": 4230000000300
+  },
+  {
+    "host_group": "servers",
+    "severity_scope": "all",
+    "start_ms": 4230000000300,
+    "end_ms": 4230000000360
+  }
+]

@@ -5,11 +5,11 @@ author_name = "anonymous"
 author_email = "anonymous"
 difficulty = "hard"
 category = "security"
-subcategories = ["long_context"]
+subcategories = []
 number_of_milestones = 0
 codebase_size = "minimal"
 languages = ["python"]
-tags = ["security", "physical-access-control", "incident-response", "badge-audit", "cli"]
+tags = ["security", "endpoint-detection", "threat-triage", "incident-response", "cli"]
 expert_time_estimate_min = 180
 junior_time_estimate_min = 360
 
@@ -21,9 +21,6 @@ timeout_sec = 1800.0
 
 [environment]
 allow_internet = false
-docker_flags = []
-gpus = 0
-gpu_types = []
 build_timeout_sec = 600.0
 cpus = 2
 memory_mb = 4096
