@@ -222,5 +222,197 @@
     "host_group": "domain-ctl",
     "rule_name": "kerberoasting ticket request",
     "suppressed": false
+  },
+  {
+    "detection_id": "dt-301",
+    "seen_ms": 4230000012000,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "keylogger",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-302",
+    "seen_ms": 4230000012450,
+    "severity": "high",
+    "host_group": "workstations",
+    "rule_name": "screenshotter",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-303",
+    "seen_ms": 4230000012900,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "clipper",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-304",
+    "seen_ms": 4230000013350,
+    "severity": "critical",
+    "host_group": "jump-hosts",
+    "rule_name": "infostealer",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-305",
+    "seen_ms": 4230000013800,
+    "severity": "high",
+    "host_group": "build-agents",
+    "rule_name": "downloader",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-306",
+    "seen_ms": 4230000014250,
+    "severity": "high",
+    "host_group": "domain-ctl",
+    "rule_name": "injector",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-307",
+    "seen_ms": 4230000014700,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "packer",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-308",
+    "seen_ms": 4230000015150,
+    "severity": "high",
+    "host_group": "workstations",
+    "rule_name": "crypter",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-309",
+    "seen_ms": 4230000015600,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "rootkit",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-310",
+    "seen_ms": 4230000016050,
+    "severity": "critical",
+    "host_group": "jump-hosts",
+    "rule_name": "backdoor",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-311",
+    "seen_ms": 4230000016500,
+    "severity": "high",
+    "host_group": "build-agents",
+    "rule_name": "wiper",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-312",
+    "seen_ms": 4230000016950,
+    "severity": "high",
+    "host_group": "domain-ctl",
+    "rule_name": "ransomware",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-313",
+    "seen_ms": 4230000017400,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "cryptominer",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-314",
+    "seen_ms": 4230000017850,
+    "severity": "high",
+    "host_group": "workstations",
+    "rule_name": "proxyware",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-315",
+    "seen_ms": 4230000018300,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "worm",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-316",
+    "seen_ms": 4230000018750,
+    "severity": "critical",
+    "host_group": "jump-hosts",
+    "rule_name": "dropper",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-317",
+    "seen_ms": 4230000019200,
+    "severity": "high",
+    "host_group": "build-agents",
+    "rule_name": "loader",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-318",
+    "seen_ms": 4230000019650,
+    "severity": "high",
+    "host_group": "domain-ctl",
+    "rule_name": "beacon",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-319",
+    "seen_ms": 4230000020100,
+    "severity": "critical",
+    "host_group": "servers",
+    "rule_name": "spyware",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-320",
+    "seen_ms": 4230000020550,
+    "severity": "high",
+    "host_group": "workstations",
+    "rule_name": "hijacker",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-321",
+    "seen_ms": 4230000021000,
+    "severity": "high",
+    "host_group": "laptops",
+    "rule_name": "stealer",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-322",
+    "seen_ms": 4230000021450,
+    "severity": "critical",
+    "host_group": "jump-hosts",
+    "rule_name": "miner",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-323",
+    "seen_ms": 4230000021900,
+    "severity": "high",
+    "host_group": "build-agents",
+    "rule_name": "tunneler",
+    "suppressed": false
+  },
+  {
+    "detection_id": "dt-324",
+    "seen_ms": 4230000022350,
+    "severity": "high",
+    "host_group": "domain-ctl",
+    "rule_name": "implant",
+    "suppressed": false
   }
 ]
