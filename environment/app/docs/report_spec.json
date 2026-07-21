@@ -129,7 +129,17 @@
       "artifacts"
     ],
     "pre_repair_source": "the FROZEN bytes at /app/workflow/.export_access.original, never the live workflow, so the value is identical whether or not a repair already ran",
-    "artifacts_field": "a JSON array of the output file BASENAMES written to the output directory, sorted ascending, and INCLUDING repair_audit.json itself even though it is written last"
+    "artifacts_field": "a JSON array of the output file BASENAMES written to the output directory, sorted ascending, and INCLUDING repair_audit.json itself even though it is written last",
+    "field_types": {
+      "schema_version": "string",
+      "pre_repair_sha256": "string, 64-char hex sha256",
+      "pre_repair_byte_count": "integer",
+      "post_repair_sha256": "string, 64-char hex sha256",
+      "post_repair_byte_count": "integer",
+      "defects_repaired": "JSON array of the defect id strings that were repaired, sorted ascending",
+      "forbidden_tokens_removed": "JSON array of the forbidden token strings removed from the restored workflow, sorted",
+      "artifacts": "JSON array of output basenames, sorted, including repair_audit.json"
+    }
   },
   "workflow_repair": {
     "path": "/app/workflow/export_access.py",
