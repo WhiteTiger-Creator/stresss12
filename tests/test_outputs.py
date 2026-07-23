@@ -490,7 +490,7 @@ def _compute_flagged(events: list[dict], override_rows: list[dict] | None = None
         severity_overlap_ms = _probe_overlap_ms(
             seen_ms, compacted_overrides.get((host_group, severity), [])
         )
-        override_pressure_score = (all_overlap_ms // 30) + (severity_overlap_ms // 20)
+        override_pressure_score = (all_overlap_ms // 30) + (-(-severity_overlap_ms // 20))
         rows.append(
             {
                 "detection_id": event["detection_id"],

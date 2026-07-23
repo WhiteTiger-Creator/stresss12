@@ -91,7 +91,8 @@
           "verified_summary",
           "output_paths"
         ],
-        "input_events_path": "/app/data/events.json"
+        "input_events_path": "/app/data/events.json",
+        "report_flag_is_output": "`--report PATH` is the OUTPUT path the diagnosis JSON is written to (created if absent); `--dossier PATH` is the review log read as input. Do not treat --report as an input path."
       },
       "repair": {
         "usage": "python3 /app/threat_audit.py repair --output-dir PATH",
