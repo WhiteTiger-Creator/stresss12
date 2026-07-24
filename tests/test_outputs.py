@@ -214,7 +214,8 @@ def _is_override_suppressed(
     host_group = _normalize_host_group(event.get("host_group", ""))
     severity = _normalize_severity(event.get("severity", ""))
     seen_ms = _normalize_seen_ms(event.get("seen_ms", 0))
-    for scope in ("all", severity):
+    scopes = (severity,) if compacted_overrides.get((host_group, severity)) else ("all",)
+    for scope in scopes:
         for start, end in compacted_overrides.get((host_group, scope), []):
             if start <= seen_ms < end:
                 return True
@@ -1434,3 +1435,31 @@ def test_escalation_ledger_debit_is_ceilinged(summary: dict):
         prev_ms, prev_out = threat["seen_ms"], carry_out
     floored_debit = hashlib.sha256("\n".join(rows).encode("utf-8")).hexdigest()
     assert summary["escalation_ledger_checksum"] != floored_debit
+
+
+def test_override_scope_does_not_inherit_all():
+    """Per #Beacon-5396 a threat with its own (host_group, severity) window does NOT
+    inherit the 'all'-scoped windows; a naive inherit-all rule would suppress at least
+    one threat the reference keeps. Also guards the rule against going dormant."""
+    events = _load_events(INPUT_PATH)
+    compacted = _compact_overrides(json.loads(OVERRIDES_PATH.read_text()))
+    flagged_ids = {str(row["detection_id"]) for row in _compute_flagged(events)}
+    distinguishing = 0
+    for event in events:
+        host_group = _normalize_host_group(event.get("host_group", ""))
+        severity = _normalize_severity(event.get("severity", ""))
+        seen_ms = _normalize_seen_ms(event.get("seen_ms", 0))
+        own = compacted.get((host_group, severity))
+        new_suppressed = (
+            any(s <= seen_ms < e for s, e in own)
+            if own
+            else any(s <= seen_ms < e for s, e in compacted.get((host_group, "all"), []))
+        )
+        naive_suppressed = any(
+            s <= seen_ms < e
+            for scope in ("all", severity)
+            for s, e in compacted.get((host_group, scope), [])
+        )
+        if naive_suppressed and not new_suppressed and str(event["detection_id"]) in flagged_ids:
+            distinguishing += 1
+    assert distinguishing >= 1
