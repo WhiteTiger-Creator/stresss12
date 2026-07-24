@@ -450,7 +450,7 @@ def _escalation_ledger(threats: list[dict]) -> dict:
             else max(previous_seen_ms - threat["seen_ms"], 0)
         )
         carry_in = max(previous_carry_out - (gap_ms // 150), 0)
-        pressure = threat["chain_risk_score"] + (-(-carry_in // 3))
+        pressure = threat["chain_risk_score"] + (-(-carry_in // 3)) + (threat["chain_reach_score"] // 7)
         carry_out = min(
             carry_in + threat["chain_risk_score"] - (-(-threat["chain_size"] // 2)), 90
         )
@@ -1409,7 +1409,7 @@ def test_escalation_ledger_credit_is_ceilinged(summary: dict):
     for threat in threats:
         gap = 0 if prev_ms is None else max(prev_ms - threat["seen_ms"], 0)
         carry_in = max(prev_out - (gap // 150), 0)
-        pressure = threat["chain_risk_score"] + (carry_in // 3)
+        pressure = threat["chain_risk_score"] + (carry_in // 3) + (threat["chain_reach_score"] // 7)
         carry_out = min(carry_in + threat["chain_risk_score"] - (threat["chain_size"] // 2), 90)
         rows.append(f"{threat['detection_id']}|{pressure}|{1 if pressure >= 10 else 0}|{carry_out}")
         prev_ms, prev_out = threat["seen_ms"], carry_out
@@ -1429,7 +1429,7 @@ def test_escalation_ledger_debit_is_ceilinged(summary: dict):
     for threat in threats:
         gap = 0 if prev_ms is None else max(prev_ms - threat["seen_ms"], 0)
         carry_in = max(prev_out - (gap // 150), 0)
-        pressure = threat["chain_risk_score"] + (-(-carry_in // 3))
+        pressure = threat["chain_risk_score"] + (-(-carry_in // 3)) + (threat["chain_reach_score"] // 7)
         carry_out = min(carry_in + threat["chain_risk_score"] - (threat["chain_size"] // 2), 90)
         rows.append(f"{threat['detection_id']}|{pressure}|{1 if pressure >= 10 else 0}|{carry_out}")
         prev_ms, prev_out = threat["seen_ms"], carry_out
