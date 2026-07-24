@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Broken Beacon threat workflow used for repair task."""
 
 from __future__ import annotations
@@ -32,7 +31,7 @@ def export_report(events: list[dict], output_dir: Path) -> None:
             threats.append(
                 {
                     "detection_id": event["detection_id"],
-                    "seen_ms": event["seen_at"] if "seen_at" in event else 0,
+                    "seen_ms": event["seen_at"] if "seen_at" in event else 0,  # noqa: SIM401
                     "severity": event["severity"],
                     "host_group": event["host_group"],
                     "rule_name": event["rule_name"],

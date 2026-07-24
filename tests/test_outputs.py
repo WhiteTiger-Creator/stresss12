@@ -27,7 +27,7 @@ INPUT_PATH = Path("/app/data/events.json")
 OVERRIDES_PATH = Path("/app/data/suppression_overrides.json")
 REPORT_SPEC_PATH = Path("/app/docs/report_spec.json")
 ALT_INPUT = Path("/tests/fixtures/alt_events.json")
-BROKEN_PIPELINE_SHA256 = "615054e4ea6dbb709e2ffeb4c8bb4e9295cb218f798b0b9dfee1a6b7e7203e94"
+BROKEN_PIPELINE_SHA256 = "9f65d960a8a3644f3e54d5e1d9ccfd6bdbbeb430f882e06e7ef8bf15d26cfb56"
 SPEC_DATA = json.loads(REPORT_SPEC_PATH.read_text())
 ISSUE_EVIDENCE_TERMS = SPEC_DATA["diagnosis_report"]["issues_found_item"]["evidence"][
     "required_terms_by_issue"
@@ -52,7 +52,7 @@ def _executable_text(src: str) -> str:
         if not node.body:
             continue
         first = node.body[0]
-        if isinstance(first, ast.Expr) and isinstance(first.value, ast.Constant):
+        if isinstance(first, ast.Expr) and isinstance(first.value, ast.Constant):  # noqa: SIM102
             if isinstance(first.value.value, str):
                 end = getattr(first, "end_lineno", first.lineno)
                 docstring_lines.update(range(first.lineno, end + 1))
@@ -151,7 +151,7 @@ def _canonicalize_events(events: list[dict]) -> list[dict]:
                         current.get("rule_name", "")
                     ):
                         replace = True
-                    elif _normalize_rule_name(normalized.get("rule_name", "")) == _normalize_rule_name(
+                    elif _normalize_rule_name(normalized.get("rule_name", "")) == _normalize_rule_name(  # noqa: SIM102
                         current.get("rule_name", "")
                     ):
                         if _normalize_host_group(
@@ -288,7 +288,7 @@ def _annotate_chains(rows: list[dict]) -> None:
             (
                 f"{chain_id}|{len(indexes)}|{span_ms}|{risk_score}|"
                 f"{','.join(detection_ids)}"
-            ).encode("utf-8")
+            ).encode()
         ).hexdigest()[:12]
         for index in indexes:
             rows[index]["chain_id"] = chain_id
@@ -355,7 +355,7 @@ def _annotate_chain_reach(rows: list[dict]) -> None:
             (
                 f"{chain_id}|{best_score}|{chain['reach_depth']}|"
                 f"{','.join(best_path)}"
-            ).encode("utf-8")
+            ).encode()
         ).hexdigest()[:12]
         finalized.append((chain_id, chain))
 
@@ -513,7 +513,7 @@ def _compute_flagged(events: list[dict], override_rows: list[dict] | None = None
                 f"{row['chain_reach_score']}|{row['chain_reach_depth']}|"
                 f"{','.join(row['chain_reach_path'])}|"
                 f"{row['chain_reach_digest']}"
-            ).encode("utf-8")
+            ).encode()
         ).hexdigest()[:12]
     rows.sort(
         key=lambda row: (
@@ -534,7 +534,7 @@ def _run_pipeline(
     output_dir: Path = OUTPUT_DIR,
 ) -> subprocess.CompletedProcess[str]:
     output_dir.mkdir(parents=True, exist_ok=True)
-    return subprocess.run(
+    return subprocess.run(  # noqa: PLW1510
         [
             "python3",
             str(pipeline),
@@ -821,7 +821,7 @@ def test_repair_runtime_does_not_read_tests_tree():
     with tempfile.TemporaryDirectory() as tmp:
         guard = Path(tmp) / "sitecustomize.py"
         guard.write_text(
-            "\n".join(
+            "\n".join(  # noqa: FLY002
                 [
                     "import builtins",
                     "from pathlib import Path",
@@ -850,7 +850,7 @@ def test_repair_runtime_does_not_read_tests_tree():
         out = Path(tmp) / "out"
         env = dict(os.environ)
         env["PYTHONPATH"] = tmp
-        result = subprocess.run(
+        result = subprocess.run(  # noqa: PLW1510
             [
                 "python3",
                 str(CLI),
@@ -945,7 +945,7 @@ def test_cli_diagnose_subcommand(expected: dict, dossier_text: str):
     report = OUTPUT_DIR / "diagnosis_redundant.json"
     if report.exists():
         report.unlink()
-    result = subprocess.run(
+    result = subprocess.run(  # noqa: PLW1510
         [
             "python3",
             str(CLI),
@@ -982,7 +982,7 @@ def test_cli_diagnose_subcommand(expected: dict, dossier_text: str):
 def test_diagnose_rejects_stray_input_flag(tmp_path_factory):
     """diagnose is stateless: it accepts only --dossier/--report and rejects a stray --input."""
     report = tmp_path_factory.mktemp("diag_reject") / "diagnosis.json"
-    result = subprocess.run(
+    result = subprocess.run(  # noqa: PLW1510
         [
             "python3", str(CLI), "diagnose",
             "--dossier", str(DOSSIER_PATH),
@@ -1004,7 +1004,7 @@ def test_repair_repatches_reset_workflow_with_custom_output_dir(
     current = PIPELINE.read_text()
     try:
         shutil.copy(ORIGINAL_PIPELINE, PIPELINE)
-        result = subprocess.run(
+        result = subprocess.run(  # noqa: PLW1510
             ["python3", str(CLI), "repair", "--output-dir", str(custom_dir)],
             capture_output=True,
             text=True,
