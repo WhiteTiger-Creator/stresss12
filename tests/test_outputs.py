@@ -435,7 +435,7 @@ def _escalation_ledger(threats: list[dict]) -> dict:
     """Sequential escalation-pressure ledger per #Beacon-5122/5123.
 
     Carry propagates between consecutive rows in export order; the carry credit
-    is ceilinged while the gap decay and chain-size debit are floored.
+    and the chain-size debit are both ceilinged (per #Beacon-5394); only the gap decay is floored.
     """
     previous_seen_ms = None
     previous_carry_out = 0
@@ -451,7 +451,7 @@ def _escalation_ledger(threats: list[dict]) -> dict:
         carry_in = max(previous_carry_out - (gap_ms // 150), 0)
         pressure = threat["chain_risk_score"] + (-(-carry_in // 3))
         carry_out = min(
-            carry_in + threat["chain_risk_score"] - (threat["chain_size"] // 2), 90
+            carry_in + threat["chain_risk_score"] - (-(-threat["chain_size"] // 2)), 90
         )
         flag = 1 if pressure >= 10 else 0
         if flag:
@@ -1414,3 +1414,23 @@ def test_escalation_ledger_credit_is_ceilinged(summary: dict):
         prev_ms, prev_out = threat["seen_ms"], carry_out
     floored = hashlib.sha256("\n".join(rows).encode("utf-8")).hexdigest()
     assert summary["escalation_ledger_checksum"] != floored
+
+
+def test_escalation_ledger_debit_is_ceilinged(summary: dict):
+    """The chain-size debit rounds UP per #Beacon-5394; flooring it yields a different ledger."""
+    threats = _compute_flagged(_load_events(INPUT_PATH))
+    assert summary["escalation_ledger_checksum"] == _escalation_ledger(threats)[
+        "escalation_ledger_checksum"
+    ]
+    # Correct ceil credit but a FLOORED debit -- an agent who stops at #Beacon-5122
+    # (debit floored) still diverges from the ledger; the shipped singletons are tuned so.
+    prev_ms, prev_out, rows = None, 0, []
+    for threat in threats:
+        gap = 0 if prev_ms is None else max(prev_ms - threat["seen_ms"], 0)
+        carry_in = max(prev_out - (gap // 150), 0)
+        pressure = threat["chain_risk_score"] + (-(-carry_in // 3))
+        carry_out = min(carry_in + threat["chain_risk_score"] - (threat["chain_size"] // 2), 90)
+        rows.append(f"{threat['detection_id']}|{pressure}|{1 if pressure >= 10 else 0}|{carry_out}")
+        prev_ms, prev_out = threat["seen_ms"], carry_out
+    floored_debit = hashlib.sha256("\n".join(rows).encode("utf-8")).hexdigest()
+    assert summary["escalation_ledger_checksum"] != floored_debit
